@@ -1,0 +1,425 @@
+/* Navbar inicia aqui (3 - 147) */
+
+  /* Importação da fonte Poppins do Google Fonts */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+  /* Reset e ajustes básicos de estilo */
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* Estilo do Navbar */
+  nav {
+    padding: 5px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  nav .logo img {
+    height: 35px;
+    width: auto;
+    margin-right: 10px;
+  }
+
+  nav .logo h1 {
+    font-size: 25px;
+    background: linear-gradient(to right, #b927fc 0%, #2c64fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  nav .menulinks {
+    display: flex;
+    list-style: none;
+    display: flex;
+  }
+
+  nav .menulinks li {
+    margin-left: 1.5rem;
+  }
+
+  nav .menulinks li a {
+    text-decoration: none;
+    color: #000;
+    /* font-size: 50px; */
+    font-weight: 400;
+    padding: 4px 8px;
+    border-radius: 5px;
+  }
+
+  nav .menulinks li a:hover {
+    background-color: #f5f5f5;
+  }
+
+  /* Estilo do menu hambúrguer */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 25px;
+    height: 1px;
+    background-color: #1f1f1f;
+    display: block;
+    margin: 7px auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Animação do menu hambúrguer */
+  .hamburger-active {
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.6s;
+    transform: rotate(45deg);
+  }
+
+  .hamburger-active .line:nth-child(2) {
+    width: 0px;
+  }
+
+  .hamburger-active .line:nth-child(1),
+  .hamburger-active .line:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .hamburger-active .line:nth-child(1) {
+    transform: translateY(12px);
+  }
+
+  .hamburger-active .line:nth-child(3) {
+    transform: translateY(-5px) rotate(90deg);
+  }
+
+  /* Estilo do menu lateral */
+  .menubar {
+    position: absolute;
+    top: 0;
+    left: -60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    height: 100vh;
+    padding: 20% 0;
+    background: rgba(255, 255, 255);
+    transition: all 0.5s ease-in;
+    z-index: 2;
+  }
+
+  /* Menu lateral ativo */
+  .active {
+    left: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .menubar ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .menubar ul li {
+    margin-bottom: 32px;
+  }
+
+  .menubar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 95%;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .menubar ul li a:hover {
+    background-color: #f5f5f5;
+  }
+
+  /* Responsividade para telas menores */
+  @media screen and (max-width: 790px) {
+    .hamburger {
+      display: block;
+    }
+
+    nav ul {
+      display: none;
+    }
+  }
+/* Navbar termina aqui */
+
+/* Navbar shrink scroll */
+
+/* Navbar fixada e estilo inicial */
+  #navbar {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 5%; /* Padding inicial */
+    transition: padding 0.5s, font-size 0.5s; /* Transição suave para padding e tamanho da fonte */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: none; /* Remove a sombra */
+  }
+
+  /* Estilo dos links da navbar */
+  #navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    /* font-size: 20px; */
+    line-height: 30px;
+    border-radius: 4px;
+  }
+
+  #navbar #logo {
+    font-size: 40px;
+    font-weight: bold;
+    transition: font-size 0.4s; /* Transição suave para o tamanho da fonte do logotipo */
+  }
+
+  /* Links no hover */
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* Link ativo/corrente */
+  #navbar a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+
+  /* Links à direita */
+  #navbar-right {
+    float: right;
+  }
+
+  /* Responsividade para telas menores */
+  @media screen and (max-width: 580px) {
+    #navbar {
+      padding: 20px 10px !important; /* Garante que o JS não sobrescreva o padding em telas pequenas */
+    }
+    #navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    #navbar-right {
+      float: none;
+    }
+  }
+
+/* Navbar shrink scroll termina aqui */
+
+/* Branding banner começa aqui */
+
+  /* Estilo da imagem */
+  .w3-image {
+    object-fit: cover;
+    display: flex;
+    background-position: center center;
+    margin: auto;
+  }
+
+  /* Estilo de texto amplo */
+  .w3-wide {
+    letter-spacing: 4px;
+  }
+
+  /* Contêiner do banner */
+  .Bradingbanner-w3-wide {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altura total da viewport */
+    overflow: hidden; /* Esconde conteúdo excedente */
+  }
+
+  /* Estilo da imagem no banner */
+  .Bradingbanner-w3-wide .w3-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Posição central do texto no banner */
+  .w3-display-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  /* Estilo de centralização */
+  .w3-center {
+    text-align: center !important;
+  }
+
+  /* Tamanho grande do texto */
+  .w3-xxlarge {
+    font-size: 36px !important;
+  }
+
+  /* Cor de texto branca */
+  .w3-text-white, .w3-hover-text-white:hover {
+    color: #fff !important;
+  }
+
+  /* Padding */
+  .w3-padding {
+    padding: 8px 16px !important;
+  }
+
+  /* Estilo de fundo preto */
+  .w3-black, .w3-hover-black:hover {
+    color: #fff !important;
+    background-color: #000 !important;
+  }
+
+  /* Opacidade máxima */
+  .w3-opacity-max {
+    opacity: 0.25;
+  }
+
+  /* Opacidade mínima */
+  .w3-opacity-min {
+    opacity: 0.75;
+  }
+
+  /* Branding banner termina aqui */
+
+  /* Rodapé começa aqui */
+
+  /* Estilo do rodapé */
+  footer {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #333333;
+    padding: 30px 0;
+  }
+
+  footer .group {
+    padding-left: 0px;
+  }
+
+  footer:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  /* Estilo das redes sociais no rodapé */
+  footer #socialmedia {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  footer #socialmedia ul {
+    list-style: none;
+  }
+
+  footer #socialmedia ul li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  footer #socialmedia ul li img {
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  /* Direitos autorais no rodapé */
+  footer #copyright {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+/* Rodapé termina aqui */
+
+/* register.html */
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  font-size: 16px;
+}
+body {
+  background-color: #435165;
+  margin: 0;
+}
+.register {
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+}
+.register h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.register form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.register form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+ height: 50px;
+  background-color: #3274d6;
+  color: #ffffff;
+}
+.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+.register form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #3274d6;
+ border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+.register form input[type="submit"]:hover {
+background-color: #2868c7;
+  transition: background-color 0.2s;
+}
+
+/* register.html termina aqui */
